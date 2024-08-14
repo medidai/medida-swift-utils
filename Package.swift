@@ -16,13 +16,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        
+        .package(url: "git@github.com:DataDog/dd-sdk-ios.git", from: "2.15.0"),
     ],
     targets: [
         .target(
             name: "MedidaSwiftUtils",
             dependencies: [
-                
+                .product(name: "Datadog", package: "Datadog"),
             ]
         ),
         .testTarget(

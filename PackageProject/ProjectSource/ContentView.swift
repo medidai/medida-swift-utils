@@ -4,10 +4,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                LoggerService.saveLog("Some text")
+            } label: {
+                Text("Print log")
+            }
+
         }
         .padding()
     }
