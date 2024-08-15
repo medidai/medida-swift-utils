@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A1B65CF2C6B5945005A0B08 /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B65CE2C6B5944005A0B08 /* LoggerService.swift */; };
-		7A1B65D22C6B595B005A0B08 /* AnalyticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B65D12C6B595B005A0B08 /* AnalyticService.swift */; };
-		7A1B65D62C6B5982005A0B08 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B65D52C6B5982005A0B08 /* LoggerModel.swift */; };
-		7A1D87592C6D19930026E1C2 /* DataDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D87582C6D19930026E1C2 /* DataDogService.swift */; };
 		7A1D875C2C6D1B0C0026E1C2 /* DatadogCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7A1D875B2C6D1B0C0026E1C2 /* DatadogCore */; };
 		7A1D875E2C6D1B0C0026E1C2 /* DatadogCrashReporting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A1D875D2C6D1B0C0026E1C2 /* DatadogCrashReporting */; };
 		7A1D87602C6D1B0C0026E1C2 /* DatadogLogs in Frameworks */ = {isa = PBXBuildFile; productRef = 7A1D875F2C6D1B0C0026E1C2 /* DatadogLogs */; };
@@ -23,20 +19,22 @@
 		7A4714662C6B3ACF003CB634 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47145C2C6B3ACF003CB634 /* ContentView.swift */; };
 		7A4714672C6B3ACF003CB634 /* MedidaSwiftUtilsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47145D2C6B3ACF003CB634 /* MedidaSwiftUtilsApp.swift */; };
 		7A4714682C6B3ACF003CB634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A47145F2C6B3ACF003CB634 /* Assets.xcassets */; };
-		7A47146E2C6B3AD5003CB634 /* MedidaSwiftUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47146B2C6B3AD5003CB634 /* MedidaSwiftUtils.swift */; };
+		7AE9607B2C6E694C0044B4A8 /* AnalyticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960742C6E694C0044B4A8 /* AnalyticService.swift */; };
+		7AE9607C2C6E694C0044B4A8 /* DataDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960762C6E694C0044B4A8 /* DataDogService.swift */; };
+		7AE9607D2C6E694C0044B4A8 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960772C6E694C0044B4A8 /* LoggerModel.swift */; };
+		7AE9607E2C6E694C0044B4A8 /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960782C6E694C0044B4A8 /* LoggerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A1B65CE2C6B5944005A0B08 /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
-		7A1B65D12C6B595B005A0B08 /* AnalyticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticService.swift; sourceTree = "<group>"; };
-		7A1B65D52C6B5982005A0B08 /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
-		7A1D87582C6D19930026E1C2 /* DataDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDogService.swift; sourceTree = "<group>"; };
 		7A4714492C6B37A3003CB634 /* MedidaSwiftUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedidaSwiftUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A47145A2C6B3ACF003CB634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A47145C2C6B3ACF003CB634 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A47145D2C6B3ACF003CB634 /* MedidaSwiftUtilsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedidaSwiftUtilsApp.swift; sourceTree = "<group>"; };
 		7A47145F2C6B3ACF003CB634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7A47146B2C6B3AD5003CB634 /* MedidaSwiftUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedidaSwiftUtils.swift; sourceTree = "<group>"; };
+		7AE960742C6E694C0044B4A8 /* AnalyticService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticService.swift; sourceTree = "<group>"; };
+		7AE960762C6E694C0044B4A8 /* DataDogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDogService.swift; sourceTree = "<group>"; };
+		7AE960772C6E694C0044B4A8 /* LoggerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
+		7AE960782C6E694C0044B4A8 /* LoggerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,33 +56,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A1B65CC2C6B5894005A0B08 /* log */ = {
-			isa = PBXGroup;
-			children = (
-				7A1B65CE2C6B5944005A0B08 /* LoggerService.swift */,
-				7A1B65D52C6B5982005A0B08 /* LoggerModel.swift */,
-				7A1D87582C6D19930026E1C2 /* DataDogService.swift */,
-			);
-			path = log;
-			sourceTree = "<group>";
-		};
-		7A1B65CD2C6B592E005A0B08 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				7A1B65D02C6B594A005A0B08 /* analytic */,
-				7A1B65CC2C6B5894005A0B08 /* log */,
-			);
-			path = service;
-			sourceTree = "<group>";
-		};
-		7A1B65D02C6B594A005A0B08 /* analytic */ = {
-			isa = PBXGroup;
-			children = (
-				7A1B65D12C6B595B005A0B08 /* AnalyticService.swift */,
-			);
-			path = analytic;
-			sourceTree = "<group>";
-		};
 		7A4714402C6B37A3003CB634 = {
 			isa = PBXGroup;
 			children = (
@@ -139,27 +110,10 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
-		7A4714692C6B3AD5003CB634 /* Implementation */ = {
-			isa = PBXGroup;
-			children = (
-				7A1B65CD2C6B592E005A0B08 /* service */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		7A47146A2C6B3AD5003CB634 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
 		7A47146C2C6B3AD5003CB634 /* MedidaSwiftUtils */ = {
 			isa = PBXGroup;
 			children = (
-				7A4714692C6B3AD5003CB634 /* Implementation */,
-				7A47146A2C6B3AD5003CB634 /* Interface */,
-				7A47146B2C6B3AD5003CB634 /* MedidaSwiftUtils.swift */,
+				7AE9607A2C6E694C0044B4A8 /* service */,
 			);
 			path = MedidaSwiftUtils;
 			sourceTree = "<group>";
@@ -171,6 +125,33 @@
 			);
 			name = Sources;
 			path = ../../Sources;
+			sourceTree = "<group>";
+		};
+		7AE960752C6E694C0044B4A8 /* analytic */ = {
+			isa = PBXGroup;
+			children = (
+				7AE960742C6E694C0044B4A8 /* AnalyticService.swift */,
+			);
+			path = analytic;
+			sourceTree = "<group>";
+		};
+		7AE960792C6E694C0044B4A8 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				7AE960762C6E694C0044B4A8 /* DataDogService.swift */,
+				7AE960772C6E694C0044B4A8 /* LoggerModel.swift */,
+				7AE960782C6E694C0044B4A8 /* LoggerService.swift */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		7AE9607A2C6E694C0044B4A8 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				7AE960752C6E694C0044B4A8 /* analytic */,
+				7AE960792C6E694C0044B4A8 /* log */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,13 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1D87592C6D19930026E1C2 /* DataDogService.swift in Sources */,
+				7AE9607D2C6E694C0044B4A8 /* LoggerModel.swift in Sources */,
+				7AE9607C2C6E694C0044B4A8 /* DataDogService.swift in Sources */,
 				7A4714662C6B3ACF003CB634 /* ContentView.swift in Sources */,
-				7A1B65D22C6B595B005A0B08 /* AnalyticService.swift in Sources */,
-				7A47146E2C6B3AD5003CB634 /* MedidaSwiftUtils.swift in Sources */,
-				7A1B65D62C6B5982005A0B08 /* LoggerModel.swift in Sources */,
+				7AE9607B2C6E694C0044B4A8 /* AnalyticService.swift in Sources */,
 				7A4714672C6B3ACF003CB634 /* MedidaSwiftUtilsApp.swift in Sources */,
-				7A1B65CF2C6B5945005A0B08 /* LoggerService.swift in Sources */,
+				7AE9607E2C6E694C0044B4A8 /* LoggerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +455,7 @@
 			repositoryURL = "git@github.com:DataDog/dd-sdk-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.15.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

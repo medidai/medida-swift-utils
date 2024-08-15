@@ -12,6 +12,7 @@ class DataDogService {
         let config = Datadog.Configuration(
             clientToken: token,
             env: environment,
+            site: .us5,
             service: serviceName,
             batchSize: .medium,
             uploadFrequency: .average
@@ -22,8 +23,7 @@ class DataDogService {
             name: serviceName,
             networkInfoEnabled: true,
             bundleWithRumEnabled: false,
-            bundleWithTraceEnabled: true,
-            consoleLogFormat: .short
+            bundleWithTraceEnabled: true
         )
         
         Datadog.initialize(with: config, trackingConsent: .granted)

@@ -1,11 +1,11 @@
 
 import Foundation
 
-enum LogType {
+public enum LogType {
     case debug, info, notice, warn, error, critical
 }
 
-enum LogAttribute: String, CaseIterable {
+public enum LogAttribute: String, CaseIterable {
     case userId
     case organizationId
     case projectId
@@ -13,21 +13,25 @@ enum LogAttribute: String, CaseIterable {
     case dimensionId
 }
 
-class LoggerService: NSObject {
+public class LoggerService: NSObject {
     
     private static let shared = LoggerService()
     
+    private var sendLogs: Bool = false
     private var dataDogService: DataDogService?
     
     // MARK: - Initialize
     
-    class func initialize(serviceName: String,
-                          environment: String,
-                          dataDogToken: String? = nil) {
-        if LoggerService.shouldSaveLogs() {
-            // if shouldSaveLogs == true
+    public class func initialize(serviceName: String,
+                                 environment: String,
+                                 sendLogs: Bool,
+                                 dataDogToken: String? = nil) {
+        LoggerService.shared.sendLogs = sendLogs
+        
+        if sendLogs {
+            // if sendLogs == true
             // service should initialize third party
-            // otherwise no need to initialize, 
+            // otherwise no need to initialize,
             // because logs should not be saved
             //
             if let dataDogToken = dataDogToken {
@@ -40,49 +44,49 @@ class LoggerService: NSObject {
     
     // MARK: - Interface
     
-    class func logout() {
+    public class func logout() {
         LoggerService.clearUserAttributes()
         LoggerService.clearAllAttributes()
     }
     
     // MARK: Attributes
     
-    class func setUserAttribute(id: String?, name: String?, email: String?) {
+    public class func setUserAttribute(id: String?, name: String?, email: String?) {
         if let dataDogService = LoggerService.shared.dataDogService {
             dataDogService.setUserAttribute(id: id, name: name, email: email)
         }
     }
     
-    class func setAttribute(key: LogAttribute, value: String) {
+    public class func setAttribute(key: LogAttribute, value: String) {
         if let dataDogService = LoggerService.shared.dataDogService {
             dataDogService.setAttribute(key: key.rawValue, value: value)
         }
     }
     
-    class func clearAttribute(key: LogAttribute) {
+    public class func clearAttribute(key: LogAttribute) {
         if let dataDogService = LoggerService.shared.dataDogService {
             dataDogService.removeAttribute(key: key.rawValue)
         }
     }
     
-    class func clearUserAttributes() {
+    public class func clearUserAttributes() {
         if let dataDogService = LoggerService.shared.dataDogService {
             dataDogService.setUserAttribute(id: nil, name: nil, email: nil)
         }
     }
     
-    class func clearAllAttributes() {
+    public class func clearAllAttributes() {
         LogAttribute.allCases.forEach { LoggerService.clearAttribute(key: $0) }
     }
     
     // MARK: Logs
     
-    class func saveErrorLog(_ message: String, attributes: [ String : String ]? = nil) {
+    public class func saveErrorLog(_ message: String, attributes: [ String : String ]? = nil) {
         LoggerService.saveLog("ERROR - \(message)", type: .error, attributes: attributes)
     }
     
-    class func saveLog(_ message: String, type: LogType = .info, attributes: [ String : String ]? = nil) {
-        if LoggerService.shouldSaveLogs() {
+    public class func saveLog(_ message: String, type: LogType = .info, attributes: [ String : String ]? = nil) {
+        if LoggerService.shared.sendLogs {
             DispatchQueue.main.async {
                 if let dataDogService = LoggerService.shared.dataDogService {
                     dataDogService.updateLog(message: message, type: type, attributes: attributes)
@@ -93,7 +97,7 @@ class LoggerService: NSObject {
         LoggerService.printLog(message)
     }
     
-    class func printLog(_ message: String) {
+    public class func printLog(_ message: String) {
         if LoggerService.shouldShowDebugLogs() {
             print(LoggerModel(message).getLogText())
         }
@@ -102,18 +106,10 @@ class LoggerService: NSObject {
     // MARK: - Actions
     
     private class func shouldShowDebugLogs() -> Bool {
-        #if DEBUG
+#if DEBUG
         return true
-        #else
+#else
         return false
-        #endif
-    }
-    
-    private class func shouldSaveLogs() -> Bool {
-        #if DEBUG
-        return false
-        #else
-        return true
-        #endif
+#endif
     }
 }

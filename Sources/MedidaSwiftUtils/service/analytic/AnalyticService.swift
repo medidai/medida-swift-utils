@@ -1,41 +1,41 @@
 
 import Foundation
 
-enum AnalyticAttribute: String, CaseIterable {
+public enum AnalyticAttribute: String, CaseIterable {
     case customKey
 }
 
-class AnalyticService: NSObject {
+public class AnalyticService: NSObject {
     
     private static let shared = AnalyticService()
     
     // MARK: - Initialize
     
-    class func initialize(token: String? = nil) {
+    public class func initialize(token: String? = nil) {
         
     }
     
     // MARK: - Interface
     
-    class func logout() {
+    public class func logout() {
         AnalyticService.clearAllAttributes()
     }
     
     // MARK: Attributes
     
-    class func setUserAttribute(id: String?, name: String?, email: String?) {
+    public class func setUserAttribute(id: String?, name: String?, email: String?) {
         
     }
     
-    class func setAttribute(key: AnalyticAttribute, value: String) {
+    public class func setAttribute(key: AnalyticAttribute, value: String) {
         
     }
     
-    class func clearAttribute(key: AnalyticAttribute) {
+    public class func clearAttribute(key: AnalyticAttribute) {
         
     }
     
-    class func clearAllAttributes() {
+    public class func clearAllAttributes() {
         AnalyticAttribute.allCases.forEach { AnalyticService.clearAttribute(key: $0) }
     }
     

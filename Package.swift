@@ -16,13 +16,20 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "git@github.com:DataDog/dd-sdk-ios.git", from: "2.15.0"),
+        .package(url: "git@github.com:DataDog/dd-sdk-ios.git", .upToNextMajor(from: "2.0.0")),
     ],
     targets: [
         .target(
             name: "MedidaSwiftUtils",
             dependencies: [
-                .product(name: "Datadog", package: "Datadog"),
+                .product(name: "DatadogCore", package: "dd-sdk-ios"),
+                .product(name: "DatadogObjc", package: "dd-sdk-ios"),
+                .product(name: "DatadogLogs", package: "dd-sdk-ios"),
+                .product(name: "DatadogTrace", package: "dd-sdk-ios"),
+                .product(name: "DatadogRUM", package: "dd-sdk-ios"),
+                .product(name: "DatadogSessionReplay", package: "dd-sdk-ios"),
+                .product(name: "DatadogCrashReporting", package: "dd-sdk-ios"),
+                .product(name: "DatadogWebViewTracking", package: "dd-sdk-ios"),
             ]
         ),
         .testTarget(
