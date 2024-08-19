@@ -25,7 +25,8 @@ public class LoggerService: NSObject {
     public class func initialize(serviceName: String,
                                  environment: String,
                                  sendLogs: Bool,
-                                 dataDogToken: String? = nil) {
+                                 dataDogToken: String? = nil,
+                                 dataDogRumId: String? = nil) {
         LoggerService.shared.sendLogs = sendLogs
         
         if sendLogs {
@@ -37,7 +38,8 @@ public class LoggerService: NSObject {
             if let dataDogToken = dataDogToken {
                 LoggerService.shared.dataDogService = DataDogService(token: dataDogToken,
                                                                      environment: environment,
-                                                                     serviceName: serviceName)
+                                                                     serviceName: serviceName,
+                                                                     rumId: dataDogRumId)
             }
         }
     }

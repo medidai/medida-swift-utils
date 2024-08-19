@@ -3,12 +3,13 @@ import Foundation
 import DatadogCore
 import DatadogLogs
 import DatadogCrashReporting
+import DatadogRUM
 
 class DataDogService {
     
     private var logger: LoggerProtocol!
     
-    init(token: String, environment: String, serviceName: String) {
+    init(token: String, environment: String, serviceName: String, rumId: String? = nil) {
         let config = Datadog.Configuration(
             clientToken: token,
             env: environment,
@@ -33,6 +34,17 @@ class DataDogService {
         CrashReporting.enable()
         
         logger = Logger.create(with: logConfig)
+        
+        if let rumId = rumId {
+            let rumConfig = RUM.Configuration(
+                applicationID: rumId,
+                uiKitViewsPredicate: DefaultUIKitRUMViewsPredicate(),
+                uiKitActionsPredicate: DefaultUIKitRUMActionsPredicate(),
+                urlSessionTracking: RUM.Configuration.URLSessionTracking()
+            )
+            
+            RUM.enable(with: rumConfig)
+        }
     }
     
     // MARK: - Interface
