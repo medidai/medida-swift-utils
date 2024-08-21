@@ -17,6 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "git@github.com:DataDog/dd-sdk-ios.git", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", .upToNextMajor(from: "8.0.0")),
     ],
     targets: [
         .target(
@@ -30,6 +31,7 @@ let package = Package(
                 .product(name: "DatadogSessionReplay", package: "dd-sdk-ios"),
                 .product(name: "DatadogCrashReporting", package: "dd-sdk-ios"),
                 .product(name: "DatadogWebViewTracking", package: "dd-sdk-ios"),
+                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
             ]
         ),
         .testTarget(

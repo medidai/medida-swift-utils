@@ -6,6 +6,8 @@ struct ContentView: View {
         VStack {
             Button {
                 LoggerService.saveLog("Some text")
+                AnalyticService.saveEvent(event: "Some event",
+                                          params: [ "key" : "value" ])
             } label: {
                 Text("Print log")
             }

@@ -23,6 +23,7 @@
 		7AE9607C2C6E694C0044B4A8 /* DataDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960762C6E694C0044B4A8 /* DataDogService.swift */; };
 		7AE9607D2C6E694C0044B4A8 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960772C6E694C0044B4A8 /* LoggerModel.swift */; };
 		7AE9607E2C6E694C0044B4A8 /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE960782C6E694C0044B4A8 /* LoggerService.swift */; };
+		7AEE7FE42C7636910067F68E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7AEE7FE32C7636910067F68E /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 				7A1D875C2C6D1B0C0026E1C2 /* DatadogCore in Frameworks */,
 				7A1D876A2C6D1B0C0026E1C2 /* DatadogWebViewTracking in Frameworks */,
 				7A1D87682C6D1B0C0026E1C2 /* DatadogTrace in Frameworks */,
+				7AEE7FE42C7636910067F68E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +66,7 @@
 				7A47145E2C6B3ACF003CB634 /* ProjectSource */,
 				7A4714602C6B3ACF003CB634 /* Resource */,
 				7A47146D2C6B3AD5003CB634 /* Sources */,
+				7AEE7FE22C7636910067F68E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +157,13 @@
 			path = service;
 			sourceTree = "<group>";
 		};
+		7AEE7FE22C7636910067F68E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +189,7 @@
 				7A1D87652C6D1B0C0026E1C2 /* DatadogSessionReplay */,
 				7A1D87672C6D1B0C0026E1C2 /* DatadogTrace */,
 				7A1D87692C6D1B0C0026E1C2 /* DatadogWebViewTracking */,
+				7AEE7FE32C7636910067F68E /* FirebaseAnalytics */,
 			);
 			productName = MedidaSwiftUtils;
 			productReference = 7A4714492C6B37A3003CB634 /* MedidaSwiftUtils.app */;
@@ -210,6 +221,7 @@
 			mainGroup = 7A4714402C6B37A3003CB634;
 			packageReferences = (
 				7A1D875A2C6D1B0C0026E1C2 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */,
+				7AEE7FE12C7635CE0067F68E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 7A47144A2C6B37A3003CB634 /* Products */;
 			projectDirPath = "";
@@ -458,6 +470,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		7AEE7FE12C7635CE0067F68E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -500,6 +520,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A1D875A2C6D1B0C0026E1C2 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */;
 			productName = DatadogWebViewTracking;
+		};
+		7AEE7FE32C7636910067F68E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AEE7FE12C7635CE0067F68E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
