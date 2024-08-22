@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "git@github.com:DataDog/dd-sdk-ios.git", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", .upToNextMajor(from: "8.0.0")),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "10.29.0"),
     ],
     targets: [
         .target(
