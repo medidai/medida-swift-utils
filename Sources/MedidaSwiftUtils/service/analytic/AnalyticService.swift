@@ -12,10 +12,12 @@ public class AnalyticService: NSObject {
     
     private static let shared = AnalyticService()
     
+    private var sendCustomEvent: Bool = false
+    
     // MARK: - Initialize
     
-    public class func initialize(exampleToken: String? = nil) {
-        
+    public class func initialize(sendCustomEvent: Bool) {
+        AnalyticService.shared.sendCustomEvent = sendCustomEvent
     }
     
     // MARK: - Interface
@@ -62,11 +64,15 @@ public class AnalyticService: NSObject {
     // MARK: Events
     
     public class func saveEvent(event: String, params: [ String : String ]? = nil) {
-        AnalyticService.printEvent(event: event, params: params)
-        
-        if AnalyticService.isFirebaseSetup() {
-            Analytics.logEvent(event, parameters: params)
+        if AnalyticService.shared.sendCustomEvent {
+            DispatchQueue.main.async {
+                if AnalyticService.isFirebaseSetup() {
+                    Analytics.logEvent(event, parameters: params)
+                }
+            }
         }
+        
+        AnalyticService.printEvent(event: event, params: params)
     }
     
     // MARK: - Actions
@@ -80,13 +86,5 @@ public class AnalyticService: NSObject {
         if let params = params { paramsMsg = "\nParams - \(params)" }
         
         LoggerService.printLog("Analytic Event - \(event)\(paramsMsg)")
-    }
-    
-    private class func shouldSendAnalytic() -> Bool {
-        #if DEBUG
-        return true
-        #else
-        return false
-        #endif
     }
 }
