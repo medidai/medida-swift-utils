@@ -145,15 +145,15 @@ LoggerService.clearAllAttributes()
 ```
 LoggerService.saveErrorLog(<#T##message: String##String#>, attributes: <#T##[String : String]?#>)
 ```
-5.1. attributes is optional, by default `nil`
-5.2. all errors will be printed in debug console
+5.1. attributes is optional, by default `nil`.
+5.2. all errors will be printed in debug console.
 6. Log message: 
 ```
 LoggerService.saveLog(<#T##message: String##String#>, type: <#T##LogType#>, attributes: <#T##[String : String]?#>)
 ```
-6.1. type is optional, by default `.info`
-6.2. attributes is optional, by default `nil`
-6.3. all messages will be printed in debug console
+6.1. type is optional, by default `.info`.
+6.2. attributes is optional, by default `nil`.
+6.3. all messages will be printed in debug console.
 7. Print message in debug console: 
 ```
 LoggerService.printLog(<#T##message: String##String#>)
