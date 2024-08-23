@@ -42,30 +42,30 @@ To install the Medida Swift Utils library in your project, follow these steps:
 
 ### AnalyticService
 
-Main setup:
-1. Import 
+#### Main setup:
+1. Import:
 ```
 import MedidaSwiftUtils
 ```
-2. In prj start point(`AppDelegate.swift / App.swift`) add 
+2. In prj start point(`AppDelegate.swift / App.swift`) add: 
 ```
 AnalyticService.initialize(sendCustomEvent: <#T##Bool#>)
 ``` 
-3. After login call func 
+3. After login call func:
 ```
 AnalyticService.setUserAttribute(id: <#T##String?#>, name: <#T##String?#>, email: <#T##String?#>)
 ```
-4. In logout call func 
+4. In logout call func:
 ```
 AnalyticService.logout()
 ``` 
-4.1 if you add custom attributes call
+4.1. if you add custom attributes call:
 ```
 AnalyticService.clearAttribute(key: <#T##String#>)
 ```
 
-Additional func:
-1. Add additional attributes: 
+#### Additional func:
+1. Add additional attributes:
 ```
 AnalyticService.setAttribute(key: <#T##String#>, value: <#T##String?#>)
 ```
@@ -81,14 +81,14 @@ AnalyticService.clearUserAttributes()
 ```
 AnalyticService.clearAllAttributes()
 ```
-5. Send custom event: 
+5. Send custom event:
 ```
 AnalyticService.saveEvent(event: <#T##String#>, params: <#T##[String : String]?#>)
 ```
-5.1 params is optional, by default `nil`
-5.2 all custom events will be printed in debug console
+5.1. params is optional, by default `nil`.
+5.2. all custom events will be printed in debug console.
 
-Predefine attributes:
+#### Predefine attributes:
 ```
 public enum AnalyticAttribute: String, CaseIterable {
     case name
@@ -98,33 +98,33 @@ public enum AnalyticAttribute: String, CaseIterable {
 
 ### LoggerService
 
-Main setup:
-1. Import 
+#### Main setup:
+1. Import:
 ```
 import MedidaSwiftUtils
-```.
-2. In prj start point(`AppDelegate.swift / App.swift`) add 
+```
+2. In prj start point(`AppDelegate.swift / App.swift`) add: 
 ```
 LoggerService.initialize(serviceName: <#T##String#>, environment: <#T##String#>, sendLogs: <#T##Bool#>)
 ``` 
-2.1 if your app use datadog add 
+2.1. if your app use datadog add:
 ```
 dataDogToken: <#T##String?#>, dataDogRumId: <#T##String?#>
 ```  
-3. After login call func 
+3. After login call func:
 ```
 LoggerService.setUserAttribute(id: <#T##String?#>, name: <#T##String?#>, email: <#T##String?#>)
 ```
-4. In logout call func 
+4. In logout call func:
 ```
 LoggerService.logout()
 ```
-4.1 if you add custom attributes call 
+4.1. if you add custom attributes call: 
 ```
 AnalyticService.clearAttribute(key: <#T##String#>)
 ```
 
-Additional func:
+#### Additional func:
 1. Add additional attribute: 
 ```
 LoggerService.setAttribute(value: <#T##String?#>, key: <#T##String#>)
@@ -145,28 +145,28 @@ LoggerService.clearAllAttributes()
 ```
 LoggerService.saveErrorLog(<#T##message: String##String#>, attributes: <#T##[String : String]?#>)
 ```
-5.1 attributes is optional, by default `nil`
-5.2 all errors will be printed in debug console
+5.1. attributes is optional, by default `nil`
+5.2. all errors will be printed in debug console
 6. Log message: 
 ```
 LoggerService.saveLog(<#T##message: String##String#>, type: <#T##LogType#>, attributes: <#T##[String : String]?#>)
 ```
-6.1 type is optional, by default `.info`
-6.2 attributes is optional, by default `nil`
-6.3 all messages will be printed in debug console
+6.1. type is optional, by default `.info`
+6.2. attributes is optional, by default `nil`
+6.3. all messages will be printed in debug console
 7. Print message in debug console: 
 ```
 LoggerService.printLog(<#T##message: String##String#>)
 ```
 
-Predefine LogTypes:
+#### Predefine LogTypes:
 ```
 public enum LogType {
     case debug, info, notice, warn, error, critical
 }
 ```
 
-Predefine attributes:
+#### Predefine attributes:
 ```
 public enum LogAttribute: String, CaseIterable {
     case userId
