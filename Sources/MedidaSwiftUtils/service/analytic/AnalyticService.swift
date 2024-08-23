@@ -23,8 +23,8 @@ public class AnalyticService: NSObject {
     // MARK: - Interface
     
     public class func logout() {
-        LoggerService.clearUserAttributes()
-        LoggerService.clearAllAttributes()
+        AnalyticService.clearUserAttributes()
+        AnalyticService.clearAllAttributes()
     }
     
     // MARK: Attributes
@@ -37,7 +37,7 @@ public class AnalyticService: NSObject {
         }
     }
     
-    public class func setAttribute(value: String?, key: String) {
+    public class func setAttribute(key: String, value: String?) {
         if AnalyticService.isFirebaseSetup() {
             Analytics.setUserProperty(value, forName: key)
         }

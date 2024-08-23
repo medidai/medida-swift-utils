@@ -59,15 +59,15 @@ public class LoggerService: NSObject {
         }
     }
     
-    public class func setAttribute(key: LogAttribute, value: String) {
+    public class func setAttribute(key: String, value: String?) {
         if let dataDogService = LoggerService.shared.dataDogService {
-            dataDogService.setAttribute(key: key.rawValue, value: value)
+            dataDogService.setAttribute(key: key, value: value)
         }
     }
     
-    public class func clearAttribute(key: LogAttribute) {
+    public class func clearAttribute(key: String) {
         if let dataDogService = LoggerService.shared.dataDogService {
-            dataDogService.removeAttribute(key: key.rawValue)
+            dataDogService.removeAttribute(key: key)
         }
     }
     
@@ -78,7 +78,7 @@ public class LoggerService: NSObject {
     }
     
     public class func clearAllAttributes() {
-        LogAttribute.allCases.forEach { LoggerService.clearAttribute(key: $0) }
+        LogAttribute.allCases.forEach { LoggerService.clearAttribute(key: $0.rawValue) }
     }
     
     // MARK: Logs
