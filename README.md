@@ -42,7 +42,7 @@ To install the Medida Swift Utils library in your project, follow these steps:
 
 ### AnalyticService
 
-#### Main setup:
+**Main setup:**
 1. Import:
 ```
 import MedidaSwiftUtils
@@ -64,7 +64,7 @@ AnalyticService.logout()
 AnalyticService.clearAttribute(key: <#T##String#>)
 ```
 
-#### Additional func:
+**Additional func:**
 1. Add additional attributes:
 ```
 AnalyticService.setAttribute(key: <#T##String#>, value: <#T##String?#>)
@@ -85,10 +85,10 @@ AnalyticService.clearAllAttributes()
 ```
 AnalyticService.saveEvent(event: <#T##String#>, params: <#T##[String : String]?#>)
 ```
-5.1. params is optional, by default `nil`.
-5.2. all custom events will be printed in debug console.
+5.1. params is optional, by default `nil` <br />
+5.2. all custom events will be printed in debug console
 
-#### Predefine attributes:
+**Predefine attributes:**
 ```
 public enum AnalyticAttribute: String, CaseIterable {
     case name
@@ -98,7 +98,7 @@ public enum AnalyticAttribute: String, CaseIterable {
 
 ### LoggerService
 
-#### Main setup:
+**Main setup:**
 1. Import:
 ```
 import MedidaSwiftUtils
@@ -124,7 +124,7 @@ LoggerService.logout()
 AnalyticService.clearAttribute(key: <#T##String#>)
 ```
 
-#### Additional func:
+**Additional func:**
 1. Add additional attribute: 
 ```
 LoggerService.setAttribute(value: <#T##String?#>, key: <#T##String#>)
@@ -145,28 +145,28 @@ LoggerService.clearAllAttributes()
 ```
 LoggerService.saveErrorLog(<#T##message: String##String#>, attributes: <#T##[String : String]?#>)
 ```
-5.1. attributes is optional, by default `nil`__
-5.2. all errors will be printed in debug console__
+5.1. attributes is optional, by default `nil` <br />
+5.2. all errors will be printed in debug console <br />
 6. Log message:
 ```
 LoggerService.saveLog(<#T##message: String##String#>, type: <#T##LogType#>, attributes: <#T##[String : String]?#>)
 ```
-6.1. type is optional, by default `.info`__
-6.2. attributes is optional, by default `nil`__
-6.3. all messages will be printed in debug console__
+6.1. type is optional, by default `.info` <br />
+6.2. attributes is optional, by default `nil` <br />
+6.3. all messages will be printed in debug console <br />
 7. Print message in debug console: 
 ```
 LoggerService.printLog(<#T##message: String##String#>)
 ```
 
-#### Predefine LogTypes:
+**Predefine LogTypes:**
 ```
 public enum LogType {
     case debug, info, notice, warn, error, critical
 }
 ```
 
-#### Predefine attributes:
+**Predefine attributes:**
 ```
 public enum LogAttribute: String, CaseIterable {
     case userId
